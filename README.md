@@ -27,3 +27,9 @@ Some of the features included:
 - Multiple redirects of same type will not occur
 - No need to auto complete
 - No need to handle zombie processes
+
+
+Created by:\
+*_Mike Anderson_*\
+*_Juan Llaguno_* \
+*_Elliot Rauchwerger_*
