@@ -7,23 +7,47 @@
 ** Main.c
 ******************************************************************************/
 
+#include <stdio.h>
+#include "Parse.h"
 
 int main()
 {
     char *line;
     char **cmd;
+    //char **array;
 
-    while (1)
-    {
-	/*
-	my_setup();
-	my_prompt();
-	line = my_read();
-	cmd = my_parse(line);
-	my_exectue(cmd);
-	my_clean();
-	*/
-    }
+    for (int i = 0; i < 1; ++i){
+
+	    my_setup();
+		my_prompt();
+		line = my_read();
+		cmd = my_parse(line);
+
+		//printf("Printing cmd: %s\n\n", *cmd);		
+
+		//printf("Printing: %s\n", array[8]);
+
+		my_execute(cmd);
+		my_clean();
+
+ 	}
+
+    /*while (1)
+	{
+	
+		my_setup();
+		my_prompt();
+		line = my_read();
+		cmd = my_parse(line);
+
+		printf("Printing cmd: %s\n\n", *cmd);		
+
+		//printf("Printing: %s\n", array[8]);
+
+		my_execute(cmd);
+		my_clean();
+	
+    }*/
 
     return 0;
 }
