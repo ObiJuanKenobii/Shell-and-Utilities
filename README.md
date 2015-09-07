@@ -30,6 +30,6 @@ Some of the features included:
 
 
 Created by:\
-*_Mike Anderson_*\
-*_Juan Llaguno_* \
+*_Mike Anderson_*
+*_Juan Llaguno_* 
 *_Elliot Rauchwerger_*
