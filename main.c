@@ -4,10 +4,11 @@
 ** Team Members:
 ** Elliot Rauchwerger, Michael Anderson, Juan Llaguno
 **
-** Main.c
+** main.c
 ******************************************************************************/
 
 
+// main function
 int main()
 {
     char *line;
