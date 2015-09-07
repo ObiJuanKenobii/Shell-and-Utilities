@@ -4,10 +4,11 @@
 ** Team Members:
 ** Elliot Rauchwerger, Michael Anderson, Juan Llaguno
 **
-** Main.c
+** main.c
 ******************************************************************************/
 
 
+// main function
 int main()
 {
     char *line;
@@ -26,4 +27,28 @@ int main()
     }
 
     return 0;
+}
+
+
+
+// This function parses the line into commands that can be executed
+char **my_parse (char *line)
+{
+    char **args;
+
+    line = parse_whitespace(line);
+    //args = parse_arguments(line);
+    // args = expand_variables(args);
+    //args = resolve_paths(args);
+
+    return args;
+}
+
+
+
+// this function parses the whitespace from the line entered
+char **parse_whitespace(char *line)
+{
+
+    return NULL;
 }
