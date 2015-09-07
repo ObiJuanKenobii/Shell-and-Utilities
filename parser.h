@@ -4,28 +4,16 @@
 ** Team Members:
 ** Elliot Rauchwerger, Michael Anderson, Juan Llaguno
 **
-** main.c
+** parser.h
 ******************************************************************************/
 
-#include "parser.h"
+#ifndef _PARSER_H
+#define _PARSER_H
 
-// main function
-int main()
-{
-    char *line;
-    char **cmd;
+char **my_parse (char *);
+char *parse_whitespace (char *);
+char **parse_arguments (char *);
+char **resolve_paths (char **);
+char **expand_variables (char **);
 
-    while (1)
-    {
-	/*
-	my_setup();
-	my_prompt();
-	line = my_read();
-	cmd = my_parse(line);
-	my_exectue(cmd);
-	my_clean();
-	*/
-    }
-
-    return 0;
-}
+#endif
