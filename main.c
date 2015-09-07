@@ -8,13 +8,15 @@
 ******************************************************************************/
 
 #include <stdio.h>
+#include <string.h>
+
 #include "Parse.h"
 
-int main()
-{
+int main(){
+
     char *line;
     char **cmd;
-    //char **array;
+    int count = 0;
 
     for (int i = 0; i < 1; ++i){
 
@@ -23,10 +25,14 @@ int main()
 		line = my_read();
 		cmd = my_parse(line);
 
-		//printf("Printing cmd: %s\n\n", *cmd);		
+		while(cmd[count] != NULL){
 
-		//printf("Printing: %s\n", array[8]);
+			printf("Argument number: %d is: %s\n", count+1, cmd[count]);
 
+			++count;
+
+		}
+					
 		my_execute(cmd);
 		my_clean();
 
@@ -50,4 +56,5 @@ int main()
     }*/
 
     return 0;
+
 }

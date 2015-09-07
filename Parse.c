@@ -25,15 +25,11 @@ char **parse_arguments(char *line){
 	
 	}
 
-	printf("%s\n\n", "Before token");
-
 	token = strtok(tokenArray, s);
 
 	int count = 0;
 
 	while(token != NULL){
-
-	    printf("%s\n", token);
 	    	
 	    finalArray[count] = token;
 	    	
@@ -42,16 +38,6 @@ char **parse_arguments(char *line){
 	   	++count;
 
    	}
-   	
-   	printf("\n%s", "After token 1.\n");
-
-   	for (int i = 0; i < count; ++i){
-
-   		printf("\n\nFinal array: %s and count: %d\n", finalArray[i], i);
-   	
-   	}
-
-   	printf("\n%s", "After token 2.\n");
 
    	free(tokenArray);
 
@@ -59,19 +45,13 @@ char **parse_arguments(char *line){
 
 }
 
-void my_setup(){
+void my_setup(){}
 
-}
-
-void my_prompt(){
-
-}
+void my_prompt(){}
 
 char *my_read(){
 
 	char *f = "arg1 > arg2 | arg3 + arg4";
-
-	//printf("MY_READ printng: %s\n\n", f);
 
 	return f;
 
@@ -81,18 +61,12 @@ char **my_parse(char *line){
 
 	char **c = &line;
 
-	//printf("MY_PARSE printng: %s\n\n", *c);
-
 	char **temp = parse_arguments(*c);
 
 	return temp;
 
 }
 
-void my_execute(char **cmd){
+void my_execute(char **cmd){}
 
-}
-
-void my_clean(){
-
-}
+void my_clean(){}
