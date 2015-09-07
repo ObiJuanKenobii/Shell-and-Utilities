@@ -5,40 +5,49 @@
 #include "Parse.h"
 
 char **parse_arguments(char *line){
-	
-	//Deref the line
-	char **temp = &line;
 
-	//Creating a array for the tokenizer of the initial arguments and the final array
-	char *tokenArray = malloc(sizeof(temp));
-	char **finalArray = malloc(255 * sizeof(char));	//Maxsize of the commands
+	//Creating a array for the tokenizer of the initial arguments.
+	char *tokenArray = malloc(sizeof(line));
 
-	//Character for our delimiter later on in the tokenizer
+	//The final array to be returned. Will consist of the arguments in an array.
+	char **finalArray = malloc(255 * sizeof(char));	//Maxsize of the commands.
+
+	//Character for our delimiter later on in the tokenizer, ability to add tokens.
 	const char s[2] = " ";
 	
-	//Token for the tokenizer
+	//Token to hold the tokenizer values.
 	char *token;
 
-	for (long unsigned i = 0; i < strlen(*temp); ++i){
+	//Get the arguments out of the line passed in.
+	for (long unsigned i = 0; i < strlen(line); ++i){
 
-		strncat(tokenArray, &temp[0][i], 1);
+		//Adding to the tokenarray, only 1 character at a time.
+		strncat(tokenArray, &line[i], 1);
 	
 	}
 
+	//Using our delimeter to truncate tokenarray.
 	token = strtok(tokenArray, s);
 
+	//Count to get to proper spots in the array.
 	int count = 0;
 
+	//While there are still tokens.
 	while(token != NULL){
-	    	
+	    
+	    //Add that token to the array.
 	    finalArray[count] = token;
-	    	
+	    
+	    //A null pointer may be specified,
+	    //in which case the function continues scanning where 
+	    //a previous successful call to the function ended.
 	   	token = strtok(NULL, s);
 
 	   	++count;
 
    	}
 
+   	//Cleaning up...
    	free(tokenArray);
 
 	return finalArray;
