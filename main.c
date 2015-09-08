@@ -15,6 +15,9 @@ int main()
     char *line;
     char **cmd;
 
+
+    my_parse(line);
+    
     while (1)
     {
 	/*
