@@ -26,7 +26,7 @@ Some of the features included:
 - Pipes and IO redirection wont occur at the same time
 - Multiple redirects of same type will not occur
 - No need to auto complete
-- No need to handle zombie processes
+- We need to handle zombie processes
 
 
 Created by:
