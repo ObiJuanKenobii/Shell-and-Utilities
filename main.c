@@ -15,20 +15,19 @@ int main()
     char *line;
     char **cmd;
 
-
-    my_parse(line);
-    
     while (1)
     {
 	/*
 	my_setup();
 	my_prompt();
+	*/
 	line = my_read();
 	cmd = my_parse(line);
+	/*
 	my_exectue(cmd);
 	my_clean();
 	*/
     }
-
+    
     return 0;
 }

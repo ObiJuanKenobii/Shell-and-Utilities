@@ -8,25 +8,50 @@
 ******************************************************************************/
 
 #include "parser.h"
-#include "ctype.h"
-#include "string.h"
-#include "stdlib.h"
 
-// temp
-#include "stdio.h"
-//
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
+
+
+
+// reads in a line of data from standard input
+char *my_read(){
+	char *buffer;
+	char *checkChar;
+	buffer = malloc(LINE_MAX*sizeof(char));
+	int check = 1;
+	 
+	while(check == 1){
+		
+		if(fgets(buffer,LINE_MAX,stdin) == NULL){
+			printf("Damn, enter a correct command\n"); 
+			check = 1;
+		}
+		else{
+			check = 0;
+		}
+	}
+
+	// replaces new line at end of buffer with null char
+        int len = strlen(buffer) - 1;
+	if (buffer[len] == '\n')
+	    buffer[len] = '\0';
+	
+	return buffer;
+}
+
+
 
 // This function parses the line into commands that can be executed
 char **my_parse (char *line)
 {
     char **args;
 
-    // temp
-    char line2[] = "  sleep   20  322& fd";
-    //
-
-    line = parse_whitespace(line2);
-    puts (line);
+    line = parse_whitespace(line);
+    printf ("%s\n", line);
     //args = parse_arguments(line);
     // args = expand_variables(args);
     //args = resolve_paths(args);
@@ -91,5 +116,9 @@ char *parse_whitespace(char *line)
 	    strcat (newLine, " ");
     }
 
+    // deallocate line c string created in my_read
+    free(line);
+
+    // return new, whitespace removed line
     return newLine;
 }

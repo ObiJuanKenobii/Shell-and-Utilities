@@ -10,6 +10,7 @@
 #ifndef _PARSER_H
 #define _PARSER_H
 
+char *my_read();
 char **my_parse (char *);
 char *parse_whitespace (char *);
 char **parse_arguments (char *);
