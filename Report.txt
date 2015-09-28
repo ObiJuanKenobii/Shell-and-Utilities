@@ -1,0 +1,95 @@
+Report
+
+=============================
+Problem Statement
+=============================
+Design and implement a basic shell interface that supports input / output redirection, pipes, background
+processing, and a series of built in functions as specified below. The shell should be robust (e.g. it
+should not crash under any circumstance beyond machine failure). The required features should adhere
+to the operational semantics of the bash shell.
+
+=============================
+Steps taken to solve problem
+=============================
+
+1. Experiment with linprog and understand commands on a deeper level.
+2. Made some deep observations on the different shell commands.
+3. Tried out smaller c functions to see how forking and processes were handled on linprog.
+4. Studied various parsing methods. 
+5. Messed with input redirection and background processes.
+6. Tested with our shell to figure out what the bugs were.
+7. Background process killing was looked into more closely.
+8. Implemented the forking methods
+
+=============================
+Assumptions
+=============================
+• No more than 255 characters would be used for input.
+• Redirecting and piping would not be mixed with a single command.
+• No more than three pipes will appear on a single line.
+• No globs, special characters, regex, quotes, etc.
+• Need to handle expansion of environment variables such as $HOME
+• Pipes and IO redirection wont occur at the same time
+• Multiple redirects of same type will not occur
+• No need to auto complete
+
+=============================
+System Calls
+=============================
+• read() - Get user input.
+● stdio.h - output, printf, etc.
+● stdlib.h - fork(), execv(),
+
+=============================
+Known Bugs
+=============================
+- Auto complete from command line integration
+	• When the command isnt typed in all the way <tab> would finish 
+		completing 
+=============================
+Division of Labor
+=============================
+1. Mike Anderson
+	• Parsing, I/O Redirecting
+2. Elliot Rauchwerger
+	• Pipes, Background Processes, Built-Ins
+3. Juan Llaguno
+	• Parsing, Path Resolution, Log
+
+=============================
+Slack Days Used
+=============================
+1. Mike Anderson
+	• 0
+2. Elliot Rauchwerger
+	• 0
+3. Juan Llaguno
+	• 0
+
+==============================
+Log
+==============================
+9/25/15
+- Background Processes
+
+9/18/15
+- Resolved Issues with Parsing 
+
+9/11/15
+- Piping Started
+
+9/4/15
+- Environmental Variables
+- Path Resolution
+- Process Execution
+- I/O Redirection 
+
+8/28/15
+- Project Assigned
+- Parsing Complete
+
+
+
+
+
+
